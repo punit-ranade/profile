@@ -133,6 +133,12 @@ body{
 
 .socials a{
 
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
     text-decoration:none;
 
     color:var(--gray);
@@ -141,6 +147,19 @@ body{
 
 }
 
+.socials a i{
+
+    width:20px;
+
+    font-size:18px;
+
+}
+
+.socials a:hover{
+
+    color:var(--primary);
+
+}
 .socials a:hover{
 
     color:var(--primary);
@@ -584,6 +603,12 @@ body{
 
 .contact-links a{
 
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
     text-decoration:none;
 
     color:var(--primary);
@@ -592,6 +617,11 @@ body{
 
 }
 
+.contact-links a i{
+
+    font-size:18px;
+
+}
 .contact-info{
 
     display:flex;
