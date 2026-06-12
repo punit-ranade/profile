@@ -141,6 +141,13 @@ body{
     gap:18px;
 
 }
+.socials{
+
+    display:flex;
+
+    gap:18px;
+
+}
 
 .socials a{
 
