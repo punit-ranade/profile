@@ -49,18 +49,30 @@ body{
     top:0;
     left:0;
 
-    width:250px;
+    width:85px;
     height:100vh;
 
     background:var(--navy);
 
-    padding:35px 30px;
+    padding:25px 15px;
 
     display:flex;
 
     flex-direction:column;
 
-    justify-content:space-between;
+    justify-content:flex-start;
+
+    transition:.4s ease;
+
+    overflow:hidden;
+
+    z-index:1000;
+
+}
+
+.sidebar:hover{
+
+    width:240px;
 
 }
 
@@ -72,18 +84,31 @@ body{
 
 }
 
+/* PROFILE */
+
 .profile-img{
 
-    width:110px;
-    height:110px;
+    width:55px;
+    height:55px;
 
     object-fit:cover;
 
     border-radius:50%;
 
-    border:4px solid var(--mint);
+    border:3px solid var(--mint);
 
-    margin-bottom:18px;
+    margin:0 auto 20px;
+
+    transition:.4s ease;
+
+}
+
+.sidebar:hover .profile-img{
+
+    width:95px;
+    height:95px;
+
+    margin-bottom:20px;
 
 }
 
@@ -93,11 +118,17 @@ body{
 
     font-family:'Poppins',sans-serif;
 
-    font-size:1.9rem;
+    font-size:1.7rem;
 
     line-height:1.1;
 
-    margin-bottom:8px;
+    margin-bottom:10px;
+
+    opacity:0;
+
+    transition:.3s;
+
+    white-space:nowrap;
 
 }
 
@@ -107,11 +138,24 @@ body{
 
     line-height:1.7;
 
-    font-size:.95rem;
+    font-size:.9rem;
 
-    margin-bottom:20px;
+    margin-bottom:25px;
+
+    opacity:0;
+
+    transition:.3s;
 
 }
+
+.sidebar:hover h1,
+.sidebar:hover .sidebar-subtitle{
+
+    opacity:1;
+
+}
+
+/* NAVIGATION */
 
 .sidebar nav{
 
@@ -119,31 +163,128 @@ body{
 
     flex-direction:column;
 
-    gap:10px;
+    gap:12px;
 
 }
 
 .sidebar nav a{
 
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
     color:white;
 
     text-decoration:none;
 
-    font-weight:500;
+    padding:12px 10px;
 
-    font-size:1.05rem;
+    border-radius:10px;
 
-    padding:4px 0;
+    transition:.3s;
+
+    white-space:nowrap;
+
+}
+
+.sidebar nav a i{
+
+    font-size:1.2rem;
+
+    min-width:24px;
+
+    text-align:center;
+
+}
+
+.sidebar nav a span{
+
+    opacity:0;
 
     transition:.3s;
 
 }
 
+.sidebar:hover nav a span{
+
+    opacity:1;
+
+}
+
 .sidebar nav a:hover{
+
+    background:rgba(255,255,255,.08);
 
     color:var(--peach);
 
-    transform:translateX(5px);
+}
+
+.sidebar nav a.active{
+
+    background:rgba(255,255,255,.12);
+
+    color:var(--orange);
+
+    font-weight:600;
+
+}
+
+/* SOCIALS */
+
+.socials{
+
+    margin-top:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.socials a{
+
+    width:46px;
+    height:46px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-decoration:none;
+
+    font-size:1.15rem;
+
+    transition:.3s;
+
+}
+
+.socials a:hover{
+
+    background:var(--orange);
+
+    transform:translateY(-3px);
+
+}
+
+.sidebar:hover .socials{
+
+    flex-direction:row;
+
+    justify-content:flex-start;
 
 }
 
