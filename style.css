@@ -37,9 +37,8 @@ body{
     overflow-x:hidden;
 
 }
-
 /* ==========================================
-   SIDEBAR
+   SIDEBAR - REVAMP
 ========================================== */
 
 .sidebar{
@@ -49,32 +48,42 @@ body{
     top:0;
     left:0;
 
-    width:280px;
+    width:250px;
     height:100vh;
 
     background:var(--navy);
 
-    padding:40px 30px;
+    padding:35px 30px;
 
     display:flex;
 
     flex-direction:column;
 
-    justify-content:space-between;
+}
 
-    z-index:1000;
+/* ======================
+   PROFILE AREA
+====================== */
+
+.sidebar-top{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
 
 }
 
 .profile-img{
 
-    width:120px;
+    width:110px;
 
-    height:120px;
-
-    object-fit:cover;
+    height:110px;
 
     border-radius:50%;
+
+    object-fit:cover;
 
     border:4px solid var(--mint);
 
@@ -84,25 +93,37 @@ body{
 
 .sidebar h1{
 
-    color:white;
-
     font-family:'Poppins',sans-serif;
 
     font-size:2rem;
 
-    margin-bottom:10px;
+    font-weight:700;
+
+    color:white;
+
+    line-height:1.1;
+
+    margin-bottom:12px;
 
 }
 
 .sidebar-subtitle{
 
-    color:#d7e3ea;
+    color:rgba(255,255,255,.85);
+
+    font-size:.95rem;
 
     line-height:1.8;
 
-    margin-bottom:40px;
+    max-width:180px;
+
+    margin-bottom:50px;
 
 }
+
+/* ======================
+   NAVIGATION
+====================== */
 
 .sidebar nav{
 
@@ -110,19 +131,23 @@ body{
 
     flex-direction:column;
 
-    gap:18px;
+    gap:22px;
 
 }
 
 .sidebar nav a{
 
+    color:white;
+
     text-decoration:none;
 
-    color:white;
+    font-size:1.05rem;
 
     font-weight:500;
 
-    transition:.3s;
+    transition:.3s ease;
+
+    width:max-content;
 
 }
 
@@ -130,22 +155,33 @@ body{
 
     color:var(--peach);
 
-    padding-left:5px;
+    transform:translateX(5px);
 
 }
 
-.socials{
+.sidebar nav a.active{
 
-    display:flex;
+    color:var(--orange);
 
-    gap:18px;
+    font-weight:700;
 
 }
+
+/* ======================
+   SOCIALS
+====================== */
+
 .socials{
+
+    margin-top:auto;
 
     display:flex;
 
-    gap:18px;
+    justify-content:flex-start;
+
+    gap:16px;
+
+    padding-top:40px;
 
 }
 
@@ -155,17 +191,19 @@ body{
 
     height:48px;
 
+    border-radius:50%;
+
     display:flex;
 
     justify-content:center;
 
     align-items:center;
 
-    border-radius:50%;
-
-    background:rgba(255,255,255,0.08);
+    background:rgba(255,255,255,.08);
 
     color:white;
+
+    text-decoration:none;
 
     font-size:1.3rem;
 
@@ -178,6 +216,18 @@ body{
     background:var(--orange);
 
     transform:translateY(-4px);
+
+}
+
+/* ======================
+   CONTENT OFFSET
+====================== */
+
+.content{
+
+    margin-left:250px;
+
+    padding:60px;
 
 }
 
@@ -464,6 +514,61 @@ body{
 .project-content h3{
 
     color:var(--navy);
+
+}
+.project-tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-top:15px;
+
+}
+
+.project-tags span{
+
+    background:var(--mint);
+
+    color:var(--navy);
+
+    padding:6px 12px;
+
+    border-radius:999px;
+
+    font-size:.85rem;
+
+    font-weight:600;
+
+}
+
+.visit-btn{
+
+    display:inline-block;
+
+    margin-top:20px;
+
+    background:var(--orange);
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:12px 18px;
+
+    border-radius:10px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.visit-btn:hover{
+
+    background:var(--navy);
 
 }
 
