@@ -440,20 +440,75 @@ body{
    CONTACT
 ========================================== */
 
-#contact a{
+.contact-grid{
 
-    color:var(--orange);
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:25px;
+
+}
+
+.contact-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:35px;
 
     text-decoration:none;
 
-}
+    color:inherit;
 
-#contact a:hover{
-
-    text-decoration:underline;
+    transition:.3s ease;
 
 }
 
+.contact-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+.contact-card i{
+
+    font-size:2rem;
+
+    color:var(--orange);
+
+    margin-bottom:20px;
+
+}
+
+.contact-card h3{
+
+    color:var(--navy);
+
+    margin-bottom:10px;
+
+}
+
+.contact-card p{
+
+    color:#666;
+
+    margin:0;
+
+}
+
+@media(max-width:768px){
+
+    .contact-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
 /* ==========================================
    IMAGE MODAL
 ========================================== */
