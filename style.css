@@ -138,31 +138,39 @@ body{
 
     display:flex;
 
-    flex-direction:column;
-
-    gap:15px;
+    gap:18px;
 
 }
 
 .socials a{
 
-    text-decoration:none;
+    width:48px;
 
-    color:white;
+    height:48px;
 
     display:flex;
 
+    justify-content:center;
+
     align-items:center;
 
-    gap:10px;
+    border-radius:50%;
 
-    transition:.3s;
+    background:rgba(255,255,255,0.08);
+
+    color:white;
+
+    font-size:1.3rem;
+
+    transition:.3s ease;
 
 }
 
 .socials a:hover{
 
-    color:var(--peach);
+    background:var(--orange);
+
+    transform:translateY(-4px);
 
 }
 
