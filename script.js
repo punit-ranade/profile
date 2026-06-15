@@ -125,32 +125,40 @@ const projectData = {
 
     tracking: {
 
-        title:
-        "Ranade Udyog - Analytics & Tracking",
+    title:
+    "Ranade Udyog - Analytics & Tracking",
 
-        overview:
-        "Complete analytics and conversion tracking implementation.",
+    overview:
+    "Implemented complete analytics and conversion tracking infrastructure for lead generation and marketing measurement.",
 
-        contribution: [
+    contribution: [
 
-            "Google Analytics 4 Setup",
-            "Google Tag Manager Setup",
-            "Form Tracking",
-            "WhatsApp Tracking",
-            "Phone Call Tracking",
-            "Google Ads Conversion Tracking"
+        "Google Analytics 4 Setup",
+        "Google Tag Manager Setup",
+        "Form Submission Tracking",
+        "WhatsApp Click Tracking",
+        "Phone Call Tracking",
+        "Google Ads Conversion Tracking"
 
-        ],
+    ],
 
-        tools: [
+    tools: [
 
-            "GA4",
-            "Google Tag Manager",
-            "Google Ads"
+        "Google Analytics 4",
+        "Google Tag Manager",
+        "Google Ads"
 
-        ]
+    ],
 
-    }
+    images: [
+
+        "assets/gtm-tags.png",
+        "assets/gtm-triggers.png",
+        "assets/gtm-variables.png"
+
+    ]
+
+}
 
 };
 
