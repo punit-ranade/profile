@@ -153,8 +153,8 @@ const projectData = {
     images: [
 
         "assets/gtm-tags.png",
-        "assets/gtm-triggers.png",
-        "assets/gtm-variables.png"
+        "assets/gtm_triggers.png",
+        "assets/gtm_variables.png"
 
     ]
 
