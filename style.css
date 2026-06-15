@@ -533,7 +533,30 @@ body{
 
     cursor:pointer;
 }
+/* ==========================================
+   DISCLAIMER
+========================================== */
 
+.portfolio-disclaimer{
+
+    margin-top:25px;
+
+    padding:15px 20px;
+
+    background:rgba(242,102,39,.08);
+
+    border-left:4px solid var(--orange);
+
+    border-radius:10px;
+
+    color:#666;
+
+    font-size:.92rem;
+
+    line-height:1.8;
+
+    font-style:italic;
+}
 /* ==========================================
    MOBILE
 ========================================== */
