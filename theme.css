@@ -35,3 +35,10 @@ body::after{content:'';position:fixed;right:-190px;top:18vh;width:460px;height:4
 #contact .form-group:last-of-type,#contact form>div:last-of-type{border-bottom:1px solid #BFC5CF!important}
 #contact .form-group + .form-group,#contact form>div + div{border-top:0!important}
 #contact .form-actions{border-top:1px solid #BFC5CF!important}
+
+/* DIRECT CONTACT FIELDS */
+#contact form>input,#contact form>textarea{position:relative;display:block;width:100%;box-sizing:border-box;margin:0!important;padding:24px 22px!important;border:0!important;border-bottom:1px solid #C3C8D1!important;border-radius:0!important;background:transparent!important;outline:0!important;box-shadow:none!important;color:var(--text);font:500 1.15rem/1.5 'IBM Plex Sans';letter-spacing:.01em;transition:background .25s ease,border-color .25s ease}
+#contact form>input:last-of-type{border-bottom:1px solid #C3C8D1!important}
+#contact form>textarea{min-height:150px;resize:vertical;border-bottom:1px solid #BFC5CF!important}
+#contact form>input:focus,#contact form>textarea:focus{background:rgba(255,255,255,.28)!important;border-bottom-color:var(--blue)!important}
+@media(max-width:600px){#contact form>input,#contact form>textarea{padding:20px 16px!important;font-size:1rem}#contact form>textarea{min-height:125px}}
