@@ -1,9 +1,9 @@
 :root{
-  --orange:#FF5A00;
-  --blue:#171717;
-  --mint:#FF5A00;
-  --cream:#F5F1E8;
-  --text:#151515;
+  --orange:#4F7C82;
+  --blue:#2F5D62;
+  --mint:#A8D5BA;
+  --cream:#F4F7F5;
+  --text:#263238;
   --white:#FFFFFF;
 }
 
@@ -11,12 +11,12 @@ body{font-family:'IBM Plex Sans',sans-serif;background:var(--cream);color:var(--
 h1,h2,h3,.logo{font-family:'Syne',sans-serif}
 p{font-family:'IBM Plex Sans',sans-serif}
 
-/* Palette only: preserve the existing layout, spacing and interactions. */
-body::before{background:radial-gradient(circle,rgba(255,90,0,.12),transparent 70%)}
+/* Light, calm palette — preserve the existing layout, spacing and interactions. */
+body::before{background:radial-gradient(circle,rgba(168,213,186,.28),transparent 70%)}
 .hero-tag,.section-tag,.tags span,.analytics-card,.logo-grid img,.certificate-grid img,.contact-links a,input,textarea,.disclaimer{background:var(--white)}
-.btn-primary,button{background:var(--orange)}
-.btn-secondary{border-color:var(--text);color:var(--text)}
-.navbar a,.project-content a,.project-category,.navbar a.active{color:var(--orange)}
-.tags span:hover{background:var(--orange)}
-.section:not(:first-of-type)::before{background:linear-gradient(90deg,var(--orange),var(--orange))}
-.cta-box{background:linear-gradient(135deg,#171717,#262626)}
+.btn-primary,button{background:var(--blue);color:var(--white)}
+.btn-secondary{border-color:var(--blue);color:var(--blue)}
+.navbar a,.project-content a,.project-category,.navbar a.active{color:var(--blue)}
+.tags span:hover{background:var(--mint);color:var(--text)}
+.section:not(:first-of-type)::before{background:linear-gradient(90deg,var(--blue),var(--mint))}
+.cta-box{background:linear-gradient(135deg,#2F5D62,#4F7C82)}
