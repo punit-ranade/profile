@@ -25,13 +25,9 @@ body::after{content:'';position:fixed;right:-190px;top:18vh;width:460px;height:4
 .tags span{background:#fff;border:1px solid #E6E9EF}
 .tags span:hover{background:#D1FAE5;color:#16181D;border-color:#A7F3D0}
 .section:not(:first-of-type)::before{background:linear-gradient(90deg,var(--blue),var(--green),var(--purple))}
-
-/* SUBTLE DECORATIVE LINES / CROSSHAIRS */
 .hero-image::before,.hero-image::after{content:'';position:absolute;pointer-events:none}
 .hero-image::before{width:42px;height:42px;left:-22px;top:-22px;border-left:1px solid rgba(37,99,235,.22);border-top:1px solid rgba(37,99,235,.22)}
 .hero-image::after{width:42px;height:42px;right:-22px;bottom:-22px;border-right:1px solid rgba(139,92,246,.22);border-bottom:1px solid rgba(139,92,246,.22)}
-
-/* WEBSITE SHOWCASE — open editorial gallery */
 .project{position:relative;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:70px;margin-top:150px;padding-top:42px;border-top:1px solid #DDE1E7;background:transparent!important;border-radius:0!important;box-shadow:none!important}
 .project:first-of-type{margin-top:90px}
 .project::before{content:'PROJECT';position:absolute;top:-31px;font:600 11px/1 'IBM Plex Sans';letter-spacing:.16em;color:#89909B;z-index:1}
@@ -58,8 +54,6 @@ body::after{content:'';position:fixed;right:-190px;top:18vh;width:460px;height:4
 .project.reverse{grid-template-columns:minmax(280px,.65fr) minmax(0,1.35fr)}
 .project-content::after{content:'↗';display:block;margin-top:22px;font-size:1.4rem;color:var(--green);transition:transform .3s ease}
 .project-content:hover::after{transform:translate(5px,-5px)}
-
-/* ALL SECONDARY CARDS — open layouts, no generic rounded UI */
 .analytics-card{border-radius:0!important;box-shadow:none!important;background:transparent!important;border:0!important;overflow:visible!important}
 .analytics-card:hover{transform:none!important;box-shadow:none!important}
 .analytics-image,.analytics-image img{border-radius:0!important}
@@ -98,11 +92,8 @@ body::after{content:'';position:fixed;right:-190px;top:18vh;width:460px;height:4
 .design-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:55px}
 .design-grid>img{width:100%;height:480px;object-fit:contain;background:transparent!important;border-radius:0!important;padding:0!important;transition:transform .5s ease,filter .5s ease}
 .design-grid>img:hover{transform:translateY(-8px) scale(1.015);filter:drop-shadow(0 22px 35px rgba(22,24,29,.14))}
-
-/* DECORATIVE SECTION DIVIDERS */
 .section-intro{position:relative}
 .section-intro::after{content:'×  +  ×';display:block;margin-top:28px;font:400 16px/1 'IBM Plex Sans';letter-spacing:.8em;color:rgba(37,99,235,.18)}
-
 @media(max-width:900px){
   .project,.project.reverse{grid-template-columns:1fr;gap:35px;margin-top:105px}
   .project.reverse .project-image,.project.reverse .project-content{order:initial}
@@ -118,7 +109,8 @@ body::after{content:'';position:fixed;right:-190px;top:18vh;width:460px;height:4
 @media(max-width:600px){
   .hero::before{right:-18vw;top:8%;font-size:11rem;-webkit-text-stroke-width:1px}
   .section::after{right:3%;top:4%;font-size:2rem}
-  .project-content h3{font-size:clamp(2.15rem,11vw,3.2rem)}
+  .project-content h3{font-size:clamp(2rem,9vw,2.8rem);max-width:100%;overflow-wrap:anywhere}
+  .project:nth-of-type(4) .project-content h3{font-size:clamp(1.65rem,7vw,2.35rem);letter-spacing:-.045em;white-space:nowrap;overflow:hidden;text-overflow:clip}
   .project-image::after{opacity:1;transform:none}
   .certificate-grid .analytics-card img{height:250px}
   .logo-grid .analytics-card>img{height:220px}
