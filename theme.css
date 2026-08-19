@@ -19,18 +19,18 @@ body::before{background:radial-gradient(circle at 75% 8%,rgba(139,92,246,.09),tr
 .section:not(:first-of-type)::before{background:linear-gradient(90deg,var(--blue),var(--green),var(--purple))}
 
 /* WEBSITE SHOWCASE — open editorial gallery */
-.project{position:relative;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:70px;margin-top:150px;padding-top:20px;background:transparent!important;border-radius:0!important;box-shadow:none!important}
+.project{position:relative;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:70px;margin-top:150px;padding-top:42px;border-top:1px solid #DDE1E7;background:transparent!important;border-radius:0!important;box-shadow:none!important}
 .project:first-of-type{margin-top:90px}
-.project::before{content:'PROJECT';position:absolute;top:-34px;font:600 11px/1 'IBM Plex Sans';letter-spacing:.16em;color:#89909B}
+.project::before{content:'PROJECT';position:absolute;top:-31px;font:600 11px/1 'IBM Plex Sans';letter-spacing:.16em;color:#89909B;z-index:1}
 .project:nth-of-type(1)::after{content:'01 / 04'}
 .project:nth-of-type(2)::after{content:'02 / 04'}
 .project:nth-of-type(3)::after{content:'03 / 04'}
 .project:nth-of-type(4)::after{content:'04 / 04'}
-.project::after{position:absolute;top:-52px;font:700 clamp(2rem,3.6vw,3.8rem)/1 'Syne';letter-spacing:-.06em;z-index:-1}
+.project::after{position:absolute;top:-42px;font:700 clamp(1.6rem,3vw,3rem)/1 'Syne';letter-spacing:-.06em;z-index:1}
 .project:nth-of-type(1)::before,.project:nth-of-type(3)::before{left:0}
 .project:nth-of-type(2)::before,.project:nth-of-type(4)::before{right:0}
-.project:nth-of-type(1)::after,.project:nth-of-type(3)::after{left:0;color:rgba(37,99,235,.18)}
-.project:nth-of-type(2)::after,.project:nth-of-type(4)::after{right:0;color:rgba(139,92,246,.18)}
+.project:nth-of-type(1)::after,.project:nth-of-type(3)::after{right:0;color:rgba(37,99,235,.24)}
+.project:nth-of-type(2)::after,.project:nth-of-type(4)::after{left:0;color:rgba(139,92,246,.24)}
 .project-image{position:relative;border-radius:0!important;background:transparent!important;overflow:visible!important}
 .project-image::after{content:'↗ VIEW PROJECT';position:absolute;right:18px;bottom:18px;padding:10px 13px;background:rgba(22,24,29,.9);color:#fff;font:600 10px/1 'IBM Plex Sans';letter-spacing:.08em;opacity:0;transform:translateY(8px);transition:.3s}
 .project-image:hover::after{opacity:1;transform:none}
