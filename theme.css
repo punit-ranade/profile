@@ -21,13 +21,16 @@ body::before{background:radial-gradient(circle at 75% 8%,rgba(139,92,246,.09),tr
 /* WEBSITE SHOWCASE — open editorial gallery */
 .project{position:relative;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:70px;margin-top:150px;padding-top:20px;background:transparent!important;border-radius:0!important;box-shadow:none!important}
 .project:first-of-type{margin-top:90px}
-.project::before{content:'PROJECT';position:absolute;left:0;top:-34px;font:600 11px/1 'IBM Plex Sans';letter-spacing:.16em;color:#89909B}
+.project::before{content:'PROJECT';position:absolute;top:-34px;font:600 11px/1 'IBM Plex Sans';letter-spacing:.16em;color:#89909B}
 .project:nth-of-type(1)::after{content:'01 / 04'}
 .project:nth-of-type(2)::after{content:'02 / 04'}
 .project:nth-of-type(3)::after{content:'03 / 04'}
 .project:nth-of-type(4)::after{content:'04 / 04'}
-.project::after{position:absolute;right:0;top:-52px;font:700 clamp(2rem,3.6vw,3.8rem)/1 'Syne';letter-spacing:-.06em;color:rgba(37,99,235,.18);z-index:-1}
-.project:nth-of-type(2)::after,.project:nth-of-type(4)::after{color:rgba(139,92,246,.18)}
+.project::after{position:absolute;top:-52px;font:700 clamp(2rem,3.6vw,3.8rem)/1 'Syne';letter-spacing:-.06em;z-index:-1}
+.project:nth-of-type(1)::before,.project:nth-of-type(3)::before{left:0}
+.project:nth-of-type(2)::before,.project:nth-of-type(4)::before{right:0}
+.project:nth-of-type(1)::after,.project:nth-of-type(3)::after{left:0;color:rgba(37,99,235,.18)}
+.project:nth-of-type(2)::after,.project:nth-of-type(4)::after{right:0;color:rgba(139,92,246,.18)}
 .project-image{position:relative;border-radius:0!important;background:transparent!important;overflow:visible!important}
 .project-image::after{content:'↗ VIEW PROJECT';position:absolute;right:18px;bottom:18px;padding:10px 13px;background:rgba(22,24,29,.9);color:#fff;font:600 10px/1 'IBM Plex Sans';letter-spacing:.08em;opacity:0;transform:translateY(8px);transition:.3s}
 .project-image:hover::after{opacity:1;transform:none}
@@ -46,8 +49,6 @@ body::before{background:radial-gradient(circle at 75% 8%,rgba(139,92,246,.09),tr
 .analytics-card:hover{transform:none!important;box-shadow:none!important}
 .analytics-image,.analytics-image img{border-radius:0!important}
 .analytics-info{background:transparent!important;border-radius:0!important}
-
-/* ANALYTICS — clean image + caption rows */
 .analytics-grid{gap:42px 34px}
 .analytics-grid .analytics-card{border-top:1px solid #DDE1E7!important;padding-top:18px}
 .analytics-grid .analytics-image{background:#fff;border:1px solid #E4E7EC;overflow:hidden}
@@ -56,16 +57,12 @@ body::before{background:radial-gradient(circle at 75% 8%,rgba(139,92,246,.09),tr
 .analytics-grid .analytics-info{padding:16px 0 0!important}
 .analytics-grid .analytics-info h3{font-size:1.25rem;margin-bottom:5px}
 .analytics-grid .analytics-info p{font-size:.9rem}
-
-/* GBP — open two-column gallery */
 .gbp-grid{gap:42px!important}
 .gbp-grid .analytics-card{border-top:1px solid #DDE1E7!important;padding-top:18px}
 .gbp-grid .analytics-image{background:#fff;border:1px solid #E4E7EC;overflow:hidden}
 .gbp-grid .analytics-image img{display:block;width:100%;transition:transform .45s ease}
 .gbp-grid .analytics-card:hover .analytics-image img{transform:scale(1.025)}
 .gbp-grid .analytics-info{padding:16px 0 0!important}
-
-/* CERTIFICATIONS — proof wall */
 .certificate-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:70px 55px;margin-top:70px}
 .certificate-grid .analytics-card{position:relative}
 .certificate-grid .analytics-card::before{content:attr(data-index);position:absolute;top:-22px;left:0;color:var(--purple);font:600 11px/1 'IBM Plex Sans';letter-spacing:.12em}
@@ -74,8 +71,6 @@ body::before{background:radial-gradient(circle at 75% 8%,rgba(139,92,246,.09),tr
 .certificate-grid .analytics-info{padding:18px 0 0!important}
 .certificate-grid .analytics-info h3{font-size:1.45rem}
 .certificate-grid .analytics-info p{font-size:.92rem;max-width:520px}
-
-/* LOGOS — identity gallery */
 .logo-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:0;margin-top:65px;border-top:1px solid #DDE1E7;border-bottom:1px solid #DDE1E7}
 .logo-grid .analytics-card{border-right:1px solid #DDE1E7!important;transition:background .3s ease}
 .logo-grid .analytics-card:last-child{border-right:0!important}
@@ -85,16 +80,15 @@ body::before{background:radial-gradient(circle at 75% 8%,rgba(139,92,246,.09),tr
 .logo-grid .analytics-info{padding:18px 20px 24px!important;border-top:1px solid #DDE1E7}
 .logo-grid .analytics-info h3{font-size:1.05rem}
 .logo-grid .analytics-info p{font-size:.82rem}
-
-/* PRINT WORK — artwork */
 .design-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:55px}
 .design-grid>img{width:100%;height:480px;object-fit:contain;background:transparent!important;border-radius:0!important;padding:0!important;transition:transform .5s ease,filter .5s ease}
 .design-grid>img:hover{transform:translateY(-8px) scale(1.015);filter:drop-shadow(0 22px 35px rgba(22,24,29,.14))}
-
 @media(max-width:900px){
   .project,.project.reverse{grid-template-columns:1fr;gap:35px;margin-top:105px}
   .project.reverse .project-image,.project.reverse .project-content{order:initial}
   .project-image img{padding:8px}
+  .project:nth-of-type(1)::before,.project:nth-of-type(2)::before,.project:nth-of-type(3)::before,.project:nth-of-type(4)::before{left:0;right:auto}
+  .project:nth-of-type(1)::after,.project:nth-of-type(2)::after,.project:nth-of-type(3)::after,.project:nth-of-type(4)::after{left:auto;right:0}
   .certificate-grid{grid-template-columns:1fr;gap:55px}
   .logo-grid{grid-template-columns:1fr}
   .logo-grid .analytics-card{border-right:0!important;border-bottom:1px solid #DDE1E7!important}
