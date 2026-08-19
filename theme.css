@@ -21,13 +21,17 @@ body::before{background:radial-gradient(circle at 75% 8%,rgba(139,92,246,.09),tr
 .tags span:hover{background:#D1FAE5;color:#16181D;border-color:#A7F3D0}
 .section:not(:first-of-type)::before{background:linear-gradient(90deg,var(--blue),var(--green),var(--purple))}
 
-/* WEBSITES — editorial showcase, not card grids */
+/* WEBSITE SHOWCASE — editorial, not rounded cards */
 .project{position:relative;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:70px;margin-top:150px;padding-top:20px}
 .project:first-of-type{margin-top:90px}
 .project::before{content:'PROJECT';position:absolute;left:0;top:-34px;font:600 11px/1 'IBM Plex Sans';letter-spacing:.16em;color:#89909B}
-.project:nth-of-type(odd)::after{content:'01';position:absolute;right:0;top:-50px;font:700 clamp(3rem,6vw,6rem)/1 'Syne';letter-spacing:-.08em;color:rgba(37,99,235,.10);z-index:-1}
-.project:nth-of-type(even)::after{content:'02';position:absolute;left:0;top:-50px;font:700 clamp(3rem,6vw,6rem)/1 'Syne';letter-spacing:-.08em;color:rgba(139,92,246,.10);z-index:-1}
-.project-image{position:relative}
+.project:nth-of-type(1)::after{content:'01 / 04'}
+.project:nth-of-type(2)::after{content:'02 / 04'}
+.project:nth-of-type(3)::after{content:'03 / 04'}
+.project:nth-of-type(4)::after{content:'04 / 04'}
+.project::after{position:absolute;right:0;top:-52px;font:700 clamp(2rem,3.6vw,3.8rem)/1 'Syne';letter-spacing:-.06em;color:rgba(37,99,235,.18);z-index:-1}
+.project:nth-of-type(2)::after,.project:nth-of-type(4)::after{color:rgba(139,92,246,.18)}
+.project-image{position:relative;border-radius:0!important;background:transparent!important;overflow:visible!important}
 .project-image::after{content:'↗ VIEW PROJECT';position:absolute;right:18px;bottom:18px;padding:10px 13px;background:rgba(22,24,29,.9);color:#fff;font:600 10px/1 'IBM Plex Sans';letter-spacing:.08em;opacity:0;transform:translateY(8px);transition:.3s}
 .project-image:hover::after{opacity:1;transform:none}
 .project-image img{border-radius:0!important;box-shadow:0 24px 60px rgba(22,24,29,.10);background:#fff;padding:12px;transition:transform .5s cubic-bezier(.2,.8,.2,1)!important}
@@ -49,7 +53,7 @@ body::before{background:radial-gradient(circle at 75% 8%,rgba(139,92,246,.09),tr
 .certificate-grid .analytics-info h3{font-size:1.45rem}
 .certificate-grid .analytics-info p{font-size:.92rem;max-width:520px}
 
-/* LOGOS — identity gallery */
+/* LOGOS — identity gallery, no individual cards */
 .logo-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:0;margin-top:65px;border-top:1px solid #DDE1E7;border-bottom:1px solid #DDE1E7}
 .logo-grid .analytics-card{background:transparent!important;box-shadow:none!important;border-radius:0!important;border-right:1px solid #DDE1E7;overflow:visible;transition:background .3s ease}
 .logo-grid .analytics-card:last-child{border-right:0}
