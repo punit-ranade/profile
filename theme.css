@@ -1,24 +1,85 @@
 :root{
-  --orange:#2563EB;
   --blue:#2563EB;
-  --mint:#10B981;
+  --green:#10B981;
+  --purple:#8B5CF6;
   --cream:#F7F8F6;
   --text:#16181D;
   --white:#FFFFFF;
-  --purple:#8B5CF6;
 }
 
 body{font-family:'IBM Plex Sans',sans-serif;background:var(--cream);color:var(--text)}
 h1,h2,h3,.logo{font-family:'Syne',sans-serif}
 p{font-family:'IBM Plex Sans',sans-serif}
 
-/* Modern light spectrum palette — preserve the existing layout, spacing and interactions. */
-body::before{background:radial-gradient(circle,rgba(139,92,246,.10),transparent 70%)}
-.hero-tag,.section-tag,.tags span,.analytics-card,.logo-grid img,.certificate-grid img,.contact-links a,input,textarea,.disclaimer{background:var(--white)}
-.btn-primary,button{background:var(--blue);color:var(--white)}
+/* MODERN LIGHT SPECTRUM */
+body::before{background:radial-gradient(circle at 75% 8%,rgba(139,92,246,.09),transparent 34%),radial-gradient(circle at 8% 65%,rgba(16,185,129,.07),transparent 32%)}
+.hero-tag,.section-tag{background:#fff}
+.btn-primary,button{background:var(--blue);color:#fff}
 .btn-secondary{border-color:var(--blue);color:var(--blue)}
 .navbar a,.project-content a,.project-category,.navbar a.active{color:var(--blue)}
-.tags span:hover{background:var(--mint);color:var(--text)}
-.section:not(:first-of-type)::before{background:linear-gradient(90deg,var(--blue),var(--mint),var(--purple))}
-.cta-box{background:linear-gradient(135deg,#2563EB,#8B5CF6)}
-.project-category:nth-of-type(2n),.section-tag:nth-of-type(2n){color:var(--purple)}
+.tags span{background:#fff;border:1px solid #E6E9EF}
+.tags span:hover{background:#D1FAE5;color:#16181D;border-color:#A7F3D0}
+.section:not(:first-of-type)::before{background:linear-gradient(90deg,var(--blue),var(--green),var(--purple))}
+
+/* WEBSITES — editorial showcase, not card grids */
+.project{position:relative;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:70px;margin-top:150px;padding-top:20px}
+.project:first-of-type{margin-top:90px}
+.project::before{content:'PROJECT';position:absolute;left:0;top:-34px;font:600 11px/1 'IBM Plex Sans';letter-spacing:.16em;color:#89909B}
+.project:nth-of-type(odd)::after{content:'01';position:absolute;right:0;top:-50px;font:700 clamp(3rem,6vw,6rem)/1 'Syne';letter-spacing:-.08em;color:rgba(37,99,235,.10);z-index:-1}
+.project:nth-of-type(even)::after{content:'02';position:absolute;left:0;top:-50px;font:700 clamp(3rem,6vw,6rem)/1 'Syne';letter-spacing:-.08em;color:rgba(139,92,246,.10);z-index:-1}
+.project-image{position:relative}
+.project-image::after{content:'↗ VIEW PROJECT';position:absolute;right:18px;bottom:18px;padding:10px 13px;background:rgba(22,24,29,.9);color:#fff;font:600 10px/1 'IBM Plex Sans';letter-spacing:.08em;opacity:0;transform:translateY(8px);transition:.3s}
+.project-image:hover::after{opacity:1;transform:none}
+.project-image img{border-radius:0!important;box-shadow:0 24px 60px rgba(22,24,29,.10);background:#fff;padding:12px;transition:transform .5s cubic-bezier(.2,.8,.2,1)!important}
+.project-image img:hover{transform:translateY(-8px) scale(1.012)!important}
+.project-content h3{font-size:clamp(2.4rem,4vw,4.8rem);line-height:.9;letter-spacing:-.055em}
+.project-content p{font-size:1.05rem;max-width:470px}
+.project-category{font-weight:600;letter-spacing:.03em}
+.project.reverse .project-image{order:2}
+.project.reverse .project-content{order:1}
+.project.reverse{grid-template-columns:minmax(280px,.65fr) minmax(0,1.35fr)}
+
+/* CERTIFICATIONS — proof wall */
+.certificate-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:70px 55px;margin-top:70px}
+.certificate-grid .analytics-card{background:transparent!important;box-shadow:none!important;border-radius:0!important;overflow:visible;position:relative}
+.certificate-grid .analytics-card::before{content:attr(data-index);position:absolute;top:-22px;left:0;color:var(--purple);font:600 11px/1 'IBM Plex Sans';letter-spacing:.12em}
+.certificate-grid .analytics-card img{width:100%;height:320px;object-fit:contain;background:#fff!important;padding:18px;border-radius:0!important;box-shadow:0 18px 45px rgba(22,24,29,.08);transition:transform .4s ease,box-shadow .4s ease}
+.certificate-grid .analytics-card:hover img{transform:translateY(-8px) rotate(-.5deg);box-shadow:0 28px 55px rgba(22,24,29,.13)}
+.certificate-grid .analytics-info{padding:18px 0 0!important}
+.certificate-grid .analytics-info h3{font-size:1.45rem}
+.certificate-grid .analytics-info p{font-size:.92rem;max-width:520px}
+
+/* LOGOS — identity gallery */
+.logo-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:0;margin-top:65px;border-top:1px solid #DDE1E7;border-bottom:1px solid #DDE1E7}
+.logo-grid .analytics-card{background:transparent!important;box-shadow:none!important;border-radius:0!important;border-right:1px solid #DDE1E7;overflow:visible;transition:background .3s ease}
+.logo-grid .analytics-card:last-child{border-right:0}
+.logo-grid .analytics-card:hover{background:#fff!important;transform:none}
+.logo-grid .analytics-card>img{width:100%;height:260px;object-fit:contain;padding:45px;background:transparent!important;border-radius:0!important;transition:transform .4s ease}
+.logo-grid .analytics-card:hover>img{transform:scale(1.05)}
+.logo-grid .analytics-info{padding:18px 20px 24px!important;border-top:1px solid #DDE1E7}
+.logo-grid .analytics-info h3{font-size:1.05rem}
+.logo-grid .analytics-info p{font-size:.82rem}
+
+/* PRINT WORK — artwork rather than cards */
+.design-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:55px}
+.design-grid>img{width:100%;height:480px;object-fit:contain;background:transparent!important;border-radius:0!important;padding:0!important;transition:transform .5s ease,filter .5s ease}
+.design-grid>img:hover{transform:translateY(-8px) scale(1.015);filter:drop-shadow(0 22px 35px rgba(22,24,29,.14))}
+
+@media(max-width:900px){
+  .project,.project.reverse{grid-template-columns:1fr;gap:35px;margin-top:105px}
+  .project.reverse .project-image,.project.reverse .project-content{order:initial}
+  .project-image img{padding:8px}
+  .certificate-grid{grid-template-columns:1fr;gap:55px}
+  .logo-grid{grid-template-columns:1fr}
+  .logo-grid .analytics-card{border-right:0;border-bottom:1px solid #DDE1E7}
+  .logo-grid .analytics-card:last-child{border-bottom:0}
+  .design-grid{grid-template-columns:1fr}
+}
+
+@media(max-width:600px){
+  .project-content h3{font-size:clamp(2.5rem,14vw,4rem)}
+  .project-image::after{opacity:1;transform:none}
+  .certificate-grid .analytics-card img{height:250px}
+  .logo-grid .analytics-card>img{height:220px}
+  .design-grid>img{height:340px}
+}
