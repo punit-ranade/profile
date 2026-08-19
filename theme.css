@@ -1,0 +1,22 @@
+:root{
+  --orange:#FF5A00;
+  --blue:#171717;
+  --mint:#FF5A00;
+  --cream:#F5F1E8;
+  --text:#151515;
+  --white:#FFFFFF;
+}
+
+body{font-family:'IBM Plex Sans',sans-serif;background:var(--cream);color:var(--text)}
+h1,h2,h3,.logo{font-family:'Syne',sans-serif}
+p{font-family:'IBM Plex Sans',sans-serif}
+
+/* Palette only: preserve the existing layout, spacing and interactions. */
+body::before{background:radial-gradient(circle,rgba(255,90,0,.12),transparent 70%)}
+.hero-tag,.section-tag,.tags span,.analytics-card,.logo-grid img,.certificate-grid img,.contact-links a,input,textarea,.disclaimer{background:var(--white)}
+.btn-primary,button{background:var(--orange)}
+.btn-secondary{border-color:var(--text);color:var(--text)}
+.navbar a,.project-content a,.project-category,.navbar a.active{color:var(--orange)}
+.tags span:hover{background:var(--orange)}
+.section:not(:first-of-type)::before{background:linear-gradient(90deg,var(--orange),var(--orange))}
+.cta-box{background:linear-gradient(135deg,#171717,#262626)}
