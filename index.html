@@ -12,8 +12,27 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="theme.css">
+    <style>
+        @media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+            body,body *{cursor:none!important}
+            .cursor-dot,.cursor-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:10000;will-change:transform,opacity;opacity:0;transition:opacity .2s ease}
+            .cursor-dot{width:7px;height:7px;border-radius:50%;background:#16181D;margin:-3.5px 0 0 -3.5px}
+            .cursor-ring{width:42px;height:42px;border:1px solid rgba(22,24,29,.65);border-radius:50%;display:grid;place-items:center;margin:-21px 0 0 -21px;transition:width .22s ease,height .22s ease,border-color .22s ease,background .22s ease,opacity .2s ease}
+            .cursor-ring span{font:700 8px/1 'IBM Plex Sans',sans-serif;letter-spacing:.08em;color:#fff;opacity:0;transform:scale(.7);transition:opacity .18s ease,transform .18s ease}
+            .cursor-dot.is-visible,.cursor-ring.is-visible{opacity:1}
+            .cursor-ring.is-active{width:76px;height:76px;margin:-38px 0 0 -38px;border-color:#16181D;background:#16181D}
+            .cursor-ring.is-active span{opacity:1;transform:scale(1)}
+            .cursor-ring.is-down{width:34px;height:34px;margin:-17px 0 0 -17px}
+        }
+        @media (prefers-reduced-motion:reduce), (hover:none), (pointer:coarse){
+            .cursor-dot,.cursor-ring{display:none!important}
+        }
+    </style>
 </head>
 <body>
+
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-ring" aria-hidden="true"><span></span></div>
 
     <!-- NAVIGATION -->
 
@@ -135,6 +154,48 @@
             if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open(link.href,'_blank','noopener,noreferrer');}
         });
     });
+    </script>
+    <script>
+    if(window.matchMedia('(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference)').matches){
+        const dot=document.querySelector('.cursor-dot');
+        const ring=document.querySelector('.cursor-ring');
+        const label=ring.querySelector('span');
+        let mouseX=window.innerWidth/2,mouseY=window.innerHeight/2;
+        let ringX=mouseX,ringY=mouseY;
+        let visible=false;
+
+        const setCursorLabel=text=>{label.textContent=text||'';ring.classList.toggle('is-active',!!text);};
+        const moveCursor=e=>{
+            mouseX=e.clientX;mouseY=e.clientY;
+            dot.style.transform=`translate(${mouseX}px,${mouseY}px)`;
+            if(!visible){visible=true;dot.classList.add('is-visible');ring.classList.add('is-visible');}
+        };
+        const animate=()=>{
+            ringX+=(mouseX-ringX)*0.16;
+            ringY+=(mouseY-ringY)*0.16;
+            ring.style.transform=`translate(${ringX}px,${ringY}px)`;
+            requestAnimationFrame(animate);
+        };
+        animate();
+        window.addEventListener('pointermove',moveCursor,{passive:true});
+        window.addEventListener('pointerdown',()=>ring.classList.add('is-down'));
+        window.addEventListener('pointerup',()=>ring.classList.remove('is-down'));
+        document.addEventListener('mouseleave',()=>{dot.classList.remove('is-visible');ring.classList.remove('is-visible');visible=false;});
+        document.addEventListener('mouseenter',()=>{if(visible){dot.classList.add('is-visible');ring.classList.add('is-visible');}});
+
+        document.querySelectorAll('a,button,input,textarea,select,[role="link"]').forEach(el=>{
+            el.addEventListener('mouseenter',()=>setCursorLabel('OPEN'));
+            el.addEventListener('mouseleave',()=>setCursorLabel(''));
+        });
+        document.querySelectorAll('.project-image').forEach(el=>{
+            el.addEventListener('mouseenter',()=>setCursorLabel('VIEW'));
+            el.addEventListener('mouseleave',()=>setCursorLabel(''));
+        });
+        document.querySelectorAll('.popup-image').forEach(el=>{
+            el.addEventListener('mouseenter',()=>setCursorLabel('ZOOM'));
+            el.addEventListener('mouseleave',()=>setCursorLabel(''));
+        });
+    }
     </script>
 </body>
 </html>
