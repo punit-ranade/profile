@@ -15,7 +15,7 @@ body{background:var(--cream);color:var(--text);font-family:'Inter',sans-serif;ov
 
 /* TYPOGRAPHY */
 h1,h2,h3{font-family:'Space Grotesk',sans-serif;}
-h1{font-size:clamp(3.5rem,8vw,7rem);line-height:.95;letter-spacing:-2px;}
+h1{font-size:clamp(3rem,6.5vw,5.8rem);line-height:.95;letter-spacing:-2px;}
 h2{font-size:clamp(2rem,4vw,4rem);margin-bottom:20px;}
 h3{font-size:1.6rem;}
 p{color:#555;line-height:1.8;}
@@ -35,13 +35,14 @@ nav{justify-self:center;}
 
 /* HERO */
 .hero{width:min(1200px,90%);margin:auto;min-height:80vh;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:80px;position:relative;}
-.hero-content{position:relative;}
+.hero-content{position:relative;align-self:center;}
 .hero-tag{display:inline-block;background:white;padding:12px 20px;border-radius:999px;margin-bottom:30px;}
 .hero p{max-width:600px;margin-top:25px;font-size:1.08rem;}
 .hero-buttons{display:flex;gap:15px;margin-top:40px;}
 .btn-primary,.btn-secondary{padding:15px 24px;border-radius:999px;font-weight:600;}
 .btn-primary{background:var(--orange);color:white;}
 .btn-secondary{border:2px solid var(--text);color:var(--text);}
+.hero-image{align-self:center;display:flex;align-items:center;justify-content:center;}
 .hero-image img{width:100%;border-radius:30px;}
 
 /* SECTIONS */
