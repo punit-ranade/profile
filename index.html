@@ -122,5 +122,19 @@
     <script>
     const sections=document.querySelectorAll('section[id]');const navLinks=document.querySelectorAll('.navbar a');window.addEventListener('scroll',()=>{let current='';sections.forEach(section=>{const sectionTop=section.offsetTop-180;if(window.scrollY>=sectionTop) current=section.getAttribute('id');});navLinks.forEach(link=>{link.classList.remove('active');if(link.getAttribute('href')==='#'+current) link.classList.add('active');});});
     </script>
+    <script>
+    document.querySelectorAll('.project-image').forEach(image=>{
+        const project=image.closest('.project');
+        const link=project?.querySelector('.project-content a[href]');
+        if(!link)return;
+        image.setAttribute('role','link');
+        image.setAttribute('tabindex','0');
+        image.setAttribute('aria-label',`Open ${project.querySelector('h3')?.textContent.trim()||'project'} website`);
+        image.addEventListener('click',()=>window.open(link.href,'_blank','noopener,noreferrer'));
+        image.addEventListener('keydown',event=>{
+            if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open(link.href,'_blank','noopener,noreferrer');}
+        });
+    });
+    </script>
 </body>
 </html>
