@@ -6,21 +6,19 @@
     <title>Punit Ranade - Profile</title>
     <link rel="icon" type="image/png" href="assets/logo.png">
     <link rel="apple-touch-icon" href="assets/logo.png">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="theme.css">
     <style>
         @media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
             body,body *{cursor:none!important}
             .cursor-dot,.cursor-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:10000;will-change:transform,opacity;opacity:0;transition:opacity .2s ease}
-            .cursor-dot{width:7px;height:7px;border-radius:50%;background:#16181D;margin:-3.5px 0 0 -3.5px}
-            .cursor-ring{width:42px;height:42px;border:1px solid rgba(22,24,29,.65);border-radius:50%;display:grid;place-items:center;margin:-21px 0 0 -21px;transition:width .22s ease,height .22s ease,border-color .22s ease,background .22s ease,opacity .2s ease}
-            .cursor-ring span{font:700 8px/1 'IBM Plex Sans',sans-serif;letter-spacing:.08em;color:#fff;opacity:0;transform:scale(.7);transition:opacity .18s ease,transform .18s ease}
+            .cursor-dot{width:7px;height:7px;border-radius:50%;background:var(--blue,#2563EB);margin:-3.5px 0 0 -3.5px}
+            .cursor-ring{width:42px;height:42px;border:1px solid rgba(37,99,235,.58);border-radius:50%;display:grid;place-items:center;margin:-21px 0 0 -21px;transition:width .22s ease,height .22s ease,margin .22s ease,border-color .22s ease,background .22s ease,opacity .2s ease,box-shadow .22s ease}
+            .cursor-ring span{font:700 7px/1 'IBM Plex Sans',sans-serif;letter-spacing:.08em;color:#fff;opacity:0;transform:scale(.7);transition:opacity .18s ease,transform .18s ease}
             .cursor-dot.is-visible,.cursor-ring.is-visible{opacity:1}
-            .cursor-ring.is-active{width:76px;height:76px;margin:-38px 0 0 -38px;border-color:#16181D;background:#16181D}
+            .cursor-ring.is-active{width:54px;height:54px;margin:-27px 0 0 -27px;border-color:transparent;background:linear-gradient(135deg,var(--blue,#2563EB),var(--purple,#8B5CF6));box-shadow:0 8px 22px rgba(37,99,235,.22)}
             .cursor-ring.is-active span{opacity:1;transform:scale(1)}
             .cursor-ring.is-down{width:34px;height:34px;margin:-17px 0 0 -17px}
         }
@@ -30,11 +28,8 @@
     </style>
 </head>
 <body>
-
     <div class="cursor-dot" aria-hidden="true"></div>
     <div class="cursor-ring" aria-hidden="true"><span></span></div>
-
-    <!-- NAVIGATION -->
 
     <header class="navbar">
         <div class="logo"><img src="assets/logo.png" alt="Punit Ranade"></div>
@@ -42,7 +37,6 @@
         <div class="social-links"><a href="https://www.linkedin.com/in/punit-ranade-09">LinkedIn</a><a href="https://www.instagram.com/punitranade">Instagram</a></div>
     </header>
 
-    <!-- HERO -->
     <section class="hero">
         <div class="hero-content">
             <span class="hero-tag">👋 Hey, I'm Punit</span>
@@ -53,24 +47,19 @@
         <div class="hero-image"><img src="assets/profile-image.png" alt="Punit Ranade"></div>
     </section>
 
-    <!-- ABOUT -->
     <section id="about" class="section">
         <span class="section-tag">About</span>
         <h2>Who even am I?</h2>
         <p>I'm a freelance Digital Growth Specialist with 4+ years of experience in website development, digital marketing, analytics and design. Over the years I've built websites, managed ad campaigns, implemented tracking systems, optimized search visibility and designed everything from industrial stickers to digital experiences. Basically, if it appears on Google, runs through a website or needs tracking, there's a good chance I've worked on it.</p>
     </section>
 
-    <!-- WORK -->
     <section id="work" class="section">
         <span class="section-tag">Work</span>
         <h2>Stuff I've Built.</h2>
 
         <div class="project"><div class="project-image"><img src="assets/ranadeudyog.png"></div><div class="project-content"><h3>Shree Enterprises </h3><span class="project-category">Industrial Screen Printing Business</span><p>Built the website, worked on SEO, ran Google Ads, implemented tracking, and somehow became the digital department.</p><div class="tags"><span>WordPress</span><span>Elementor</span><span>SEO</span><span>Google Ads</span><span>GA4</span><span>GTM</span></div><a href="https://ranadeudyog.com" target="_blank">Visit Website →</a></div></div>
-
         <div class="project reverse"><div class="project-image"><img src="assets/bhatkanti.png"></div><div class="project-content"><h3>Bhatkanti Tours</h3><span class="project-category">Travel Agency</span><p>Built a travel website designed to make trip planning easier and destination discovery smoother.</p><div class="tags"><span>WordPress</span><span>Elementor</span><span>Responsive Design</span><span>UI Design</span></div><a href="https://bhatkantitours.com" target="_blank">Visit Website →</a></div></div>
-
         <div class="project"><div class="project-image"><img src="assets/thegaribi.png"></div><div class="project-content"><h3>The Garibi</h3><span class="project-category">E-Commerce Brand</span><p>Built the website and implemented analytics so decisions could be based on data instead of vibes.</p><div class="tags"><span>WordPress</span><span>GA4</span><span>GTM</span><span>Meta Pixel</span><span>Analytics</span></div><a href="https://thegaribi.com" target="_blank" rel="noopener noreferrer">Visit Website →</a></div></div>
-
         <div class="project reverse"><div class="project-image"><img src="assets/manmastishk.png"></div><div class="project-content"><h3>ManMastishk</h3><span class="project-category">Neuroplasticity & Wellbeing</span><p>One of my favourite projects because design, content and user experience all mattered equally.</p><div class="tags"><span>WordPress</span><span>UI/UX</span><span>Branding</span><span>Content Architecture</span></div><a href="https://manmastishk.org" target="_blank" rel="noopener noreferrer">Visit Website →</a></div></div>
 
         <h2 class="sub-heading">Numbers. Because feelings aren't analytics.</h2>
@@ -105,7 +94,6 @@
         </div>
     </section>
 
-    <!-- CERTIFICATES -->
     <section id="proof" class="section">
         <span class="section-tag">Proof</span><h2>Got trust issues?</h2><p>Fair enough. Here's proof I didn't learn everything from random YouTube.</p>
         <div class="certificate-grid">
@@ -116,7 +104,6 @@
         </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact" class="section contact">
         <span class="section-tag">Contact</span><h2>Let's build something cool.</h2><p>Need a website? Need help with SEO? Need better tracking? Need someone who understands both print and digital? Let's talk.</p>
         <form><input type="text" placeholder="Your Name"><input type="email" placeholder="Your Email"><input type="contact" placeholder="Your Contact Number"><textarea placeholder="Tell me about your project"></textarea><button type="submit">Send Message</button></form>
@@ -163,7 +150,6 @@
         let mouseX=window.innerWidth/2,mouseY=window.innerHeight/2;
         let ringX=mouseX,ringY=mouseY;
         let visible=false;
-
         const setCursorLabel=text=>{label.textContent=text||'';ring.classList.toggle('is-active',!!text);};
         const moveCursor=e=>{
             mouseX=e.clientX;mouseY=e.clientY;
@@ -182,7 +168,6 @@
         window.addEventListener('pointerup',()=>ring.classList.remove('is-down'));
         document.addEventListener('mouseleave',()=>{dot.classList.remove('is-visible');ring.classList.remove('is-visible');visible=false;});
         document.addEventListener('mouseenter',()=>{if(visible){dot.classList.add('is-visible');ring.classList.add('is-visible');}});
-
         document.querySelectorAll('a,button,input,textarea,select,[role="link"]').forEach(el=>{
             el.addEventListener('mouseenter',()=>setCursorLabel('OPEN'));
             el.addEventListener('mouseleave',()=>setCursorLabel(''));
