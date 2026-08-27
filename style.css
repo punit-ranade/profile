@@ -108,6 +108,66 @@ body.has-custom-cursor,body.has-custom-cursor a,body.has-custom-cursor button{cu
 @media(max-width:900px),(hover:none),(pointer:coarse){.cursor-dot,.cursor-ring{display:none!important;}body,body a,body button{cursor:auto!important;}}
 @media(prefers-reduced-motion:reduce){.cursor-ring{transition:none;}}
 
+/* ANIMATION LAYER — animation only; no layout/content/typography changes */
+@media (prefers-reduced-motion:no-preference){
+    @keyframes pageFadeIn{from{opacity:0}to{opacity:1}}
+    @keyframes heroRise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes heroImageIn{from{opacity:0;transform:translateY(26px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+    @keyframes sectionLineIn{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+    body{animation:pageFadeIn .55s ease both}
+    .hero-content>*{opacity:0;animation:heroRise .7s cubic-bezier(.2,.8,.2,1) forwards}
+    .hero-content .hero-tag{animation-delay:.08s}
+    .hero-content h1{animation-delay:.16s}
+    .hero-content p{animation-delay:.24s}
+    .hero-content .hero-buttons{animation-delay:.34s}
+    .hero-image{opacity:0;animation:heroImageIn .9s cubic-bezier(.2,.8,.2,1) .18s forwards}
+    .hero-image img{transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+    .hero-image:hover img{transform:translateY(-6px) scale(1.01)}
+
+    .navbar{transition:background-color .3s ease,box-shadow .3s ease}
+    .navbar a{transition:color .25s ease,transform .25s ease}
+    .navbar a:hover{transform:translateY(-2px)}
+    .logo img{transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+    .logo:hover img{transform:rotate(-3deg) scale(1.04)}
+
+    .section:not(:first-of-type)::before{transform:scaleX(0);transform-origin:left;animation:sectionLineIn .75s cubic-bezier(.2,.8,.2,1) .15s both}
+
+    /* Existing JS adds .reveal + .show while elements enter the viewport. */
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .75s cubic-bezier(.2,.8,.2,1),transform .75s cubic-bezier(.2,.8,.2,1);will-change:opacity,transform}
+    .reveal.show{opacity:1;transform:translateY(0)}
+
+    .tags span{transition:transform .25s ease,background-color .25s ease,color .25s ease}
+    .tags span:hover{transform:translateY(-3px)}
+    .project-content a,.contact-links a,.btn-primary,.btn-secondary,button{transition:transform .25s ease,background-color .25s ease,color .25s ease,box-shadow .25s ease}
+    .project-content a:hover,.contact-links a:hover{transform:translateX(4px)}
+    .btn-primary:hover,.btn-secondary:hover,button:hover{transform:translateY(-3px)}
+    button:active,.btn-primary:active,.btn-secondary:active{transform:translateY(0) scale(.98)}
+
+    .analytics-card .analytics-image{overflow:hidden}
+    .analytics-card .analytics-image img{transition:transform .55s cubic-bezier(.2,.8,.2,1)}
+    .analytics-card:hover .analytics-image img{transform:scale(1.025)}
+    .popup-image{transition:transform .45s cubic-bezier(.2,.8,.2,1),filter .45s ease}
+
+    #lightbox{opacity:0;transition:opacity .3s ease}
+    #lightbox-img{transform:scale(.96);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+    #lightbox[style*="display: flex"]{opacity:1}
+    #lightbox[style*="display: flex"] #lightbox-img{transform:scale(1)}
+
+    .contact input,.contact textarea{transition:box-shadow .25s ease,transform .25s ease}
+    .contact input:focus,.contact textarea:focus{transform:translateY(-1px);box-shadow:0 8px 26px rgba(0,0,0,.06)}
+
+    @media(max-width:900px){
+        .reveal{transform:translateY(20px)}
+    }
+}
+
+@media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .reveal{opacity:1!important;transform:none!important;transition:none!important}
+    body,.hero-content>*,.hero-image{animation:none!important;opacity:1!important}
+}
+
 /* MOBILE */
 @media(max-width:900px){
  .navbar{display:flex;flex-direction:column;gap:20px;}
