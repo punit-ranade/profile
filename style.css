@@ -11,3 +11,65 @@
 @media(prefers-reduced-motion:no-preference){@keyframes pageFadeIn{from{opacity:0}to{opacity:1}}@keyframes heroRise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}@keyframes heroImageIn{from{opacity:0;transform:translateY(26px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}body{animation:pageFadeIn .55s ease both}.hero-content>*{opacity:0;animation:heroRise .7s cubic-bezier(.2,.8,.2,1) forwards}.hero-content .hero-tag{animation-delay:.08s}.hero-content h1{animation-delay:.16s}.hero-content p{animation-delay:.24s}.hero-content .hero-buttons{animation-delay:.34s}.hero-image{opacity:0;animation:heroImageIn .9s cubic-bezier(.2,.8,.2,1) .18s forwards}.hero-image img{transition:transform .6s cubic-bezier(.2,.8,.2,1)}.hero-image:hover img{transform:translateY(-6px) scale(1.01)}.reveal{opacity:0;transform:translateY(28px);transition:opacity .75s cubic-bezier(.2,.8,.2,1),transform .75s cubic-bezier(.2,.8,.2,1)}.reveal.show{opacity:1;transform:translateY(0)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1!important;transform:none!important;transition:none!important}body,.hero-content>*,.hero-image{animation:none!important;opacity:1!important}}
 @media(max-width:1200px){.section,.navbar,.hero{width:min(94vw,1500px)}.hero{gap:clamp(40px,5vw,70px);grid-template-columns:minmax(0,1.05fr) minmax(360px,.95fr)}}@media(max-width:900px){.navbar{width:min(94vw,720px);display:flex;flex-direction:column;gap:20px}.hero{width:min(94vw,720px);grid-template-columns:1fr;padding-top:40px;min-height:auto;gap:55px}.hero-image img{max-width:min(100%,520px)}.section{width:min(92vw,720px)}.project{grid-template-columns:1fr;padding:25px}.project.reverse .project-image,.project.reverse .project-content{order:unset}.gbp-grid,.design-grid,.logo-grid{grid-template-columns:1fr}h1{font-size:3.5rem}.hero-buttons{flex-direction:column}.contact-links{flex-direction:column}}@media(max-width:600px){.section,.hero,.navbar{width:92vw}.hero{gap:42px}.hero-image img{width:100%}h1{font-size:clamp(3rem,15vw,4.5rem)}}
+
+/* ===== ANIMATION FINISHING LAYER ===== */
+/* Remove the old project overlay completely */
+.project-image::after{content:none!important;display:none!important}
+
+@media (prefers-reduced-motion:no-preference){
+  @keyframes sectionAccent{from{transform:scaleX(0);opacity:0}to{transform:scaleX(1);opacity:1}}
+  @keyframes softLift{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+
+  /* Navbar */
+  .navbar{transition:background-color .3s ease,box-shadow .3s ease,transform .3s ease}
+  .navbar.scrolled{box-shadow:0 14px 35px rgba(22,24,29,.07)}
+  .navbar a{transition:color .25s ease,transform .25s ease}
+  .navbar a:hover{transform:translateY(-2px)}
+  .navbar nav a{position:relative}
+  .navbar nav a::after{content:'';position:absolute;left:0;right:0;bottom:-8px;height:2px;border-radius:999px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+  .navbar nav a:hover::after,.navbar nav a.active::after{transform:scaleX(1)}
+  .navbar nav a.active{color:var(--blue)}
+
+  /* Reveal rhythm and stagger */
+  .reveal{will-change:opacity,transform}
+  .analytics-grid .reveal:nth-child(2),.gbp-grid .reveal:nth-child(2),.logo-grid .reveal:nth-child(2),.certificate-grid .reveal:nth-child(2){transition-delay:.08s}
+  .analytics-grid .reveal:nth-child(3),.certificate-grid .reveal:nth-child(3){transition-delay:.16s}
+  .analytics-grid .reveal:nth-child(4),.certificate-grid .reveal:nth-child(4){transition-delay:.24s}
+  .analytics-grid .reveal:nth-child(5){transition-delay:.32s}
+  .section:not(:first-of-type)::before{transform-origin:left;animation:sectionAccent .75s cubic-bezier(.2,.8,.2,1) both}
+
+  /* Project and image motion — no text overlay */
+  .project-image img{transition:transform .55s cubic-bezier(.2,.8,.2,1),box-shadow .55s ease!important}
+  .project:hover .project-image img{transform:translateY(-6px) scale(1.006)!important}
+  .analytics-image img,.gbp-grid .analytics-image img{transition:transform .55s cubic-bezier(.2,.8,.2,1)!important}
+  .analytics-card:hover .analytics-image img{transform:scale(1.025)}
+  .popup-image{transition:transform .45s cubic-bezier(.2,.8,.2,1),filter .45s ease!important}
+
+  /* Small interaction polish */
+  .btn-primary,.btn-secondary,button,.contact-links a,.project-content a{transition:transform .25s ease,box-shadow .25s ease,color .25s ease,background-color .25s ease!important}
+  .btn-primary:hover,.btn-secondary:hover,button:hover{transform:translateY(-3px)}
+  .btn-primary:active,.btn-secondary:active,button:active{transform:translateY(0) scale(.98)}
+  .project-content a:hover{transform:translateX(4px)}
+  .tags span{transition:transform .25s ease,background-color .25s ease,color .25s ease,border-color .25s ease!important}
+  .tags span:hover{transform:translateY(-2px)}
+  .contact-links a:hover{transform:translateY(-2px)}
+
+  /* Lightbox */
+  #lightbox{backdrop-filter:blur(8px);transition:background-color .28s ease}
+  #lightbox-img{transition:transform .32s cubic-bezier(.2,.8,.2,1),opacity .32s ease}
+  #lightbox[style*="display: flex"] #lightbox-img{animation:lightboxIn .32s cubic-bezier(.2,.8,.2,1) both}
+  @keyframes lightboxIn{from{opacity:0;transform:scale(.965)}to{opacity:1;transform:scale(1)}}
+  .close-btn{transition:transform .2s ease,opacity .2s ease}
+  .close-btn:hover{transform:rotate(90deg) scale(1.06)}
+
+  /* Form focus motion */
+  input,textarea{transition:transform .2s ease,box-shadow .2s ease}
+  input:focus,textarea:focus{transform:translateY(-1px)}
+
+  /* Gentle decorative motion only on the portrait */
+  .hero-image{animation:heroImageIn .9s cubic-bezier(.2,.8,.2,1) .18s forwards,softLift 7s ease-in-out 1.2s infinite}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
