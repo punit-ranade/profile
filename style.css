@@ -77,6 +77,8 @@ nav{justify-self:center;}
 .gbp-grid img,.design-grid img{width:100%;border-radius:25px;}
 .logo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;}
 .logo-grid img{width:100%;background:white;padding:40px;border-radius:25px;}
+/* Extra breathing room after the print design showcase */
+.design-grid + .sub-heading{margin-top:80px;}
 .certificate-grid{margin-top:50px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;}
 .certificate-grid img{width:100%;border-radius:25px;transition:.3s;background:#fff;padding:10px;box-shadow:0 10px 30px rgba(0,0,0,.08);}
 .certificate-grid img:hover,.design-grid img:hover{transform:translateY(-8px);transition:.3s;}
