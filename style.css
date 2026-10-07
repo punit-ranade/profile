@@ -73,3 +73,7 @@
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
 }
+
+
+/* ===== ABOUT SECTION ===== */
+.about-lead{font-family:'Syne',sans-serif;font-size:clamp(1.5rem,2.5vw,2.4rem)!important;line-height:1.2!important;color:var(--text)!important;max-width:900px!important;margin:35px 0 18px!important;font-weight:600}.about-path{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:55px}.about-step{background:rgba(255,255,255,.72);border-radius:24px;padding:26px 22px;min-height:190px;transition:transform .3s ease,box-shadow .3s ease}.about-step:hover{transform:translateY(-6px);box-shadow:0 14px 35px rgba(0,0,0,.07)}.about-step span{font:600 .8rem/1 'IBM Plex Sans',sans-serif;color:var(--orange);letter-spacing:.08em}.about-step h3{margin:24px 0 10px;font-size:1.35rem}.about-step p{font-size:.9rem!important;line-height:1.55!important}.about-close{margin-top:45px!important;max-width:900px!important;font-size:1.2rem!important}.about-close strong{color:var(--blue)}@media(max-width:900px){.about-path{grid-template-columns:1fr 1fr}}@media(max-width:600px){.about-path{grid-template-columns:1fr}.about-step{min-height:auto}}
