@@ -661,3 +661,10 @@ body::before {
   #work .design-grid .design-item { padding: 14px !important; }
   #contact { width: 92vw; padding: 42px 18px; }
 }
+
+
+/* PROJECT CASE-STUDY DETAILS */
+.project-meta{display:grid;gap:10px;margin:24px 0 20px;padding:15px 0;border-top:1px solid #DDE1E7;border-bottom:1px solid #DDE1E7;max-width:520px}
+.project-meta span{display:grid;grid-template-columns:92px minmax(0,1fr);gap:12px;font-size:.84rem;line-height:1.5;color:#4B5563}
+.project-meta b{font:700 9px/1.5 'IBM Plex Sans',sans-serif;letter-spacing:.12em;color:#89909B}
+@media(max-width:600px){.project-meta span{grid-template-columns:76px minmax(0,1fr);gap:8px;font-size:.8rem}}
