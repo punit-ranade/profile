@@ -668,3 +668,37 @@ body::before {
 .project-meta span{display:grid;grid-template-columns:92px minmax(0,1fr);gap:12px;font-size:.84rem;line-height:1.5;color:#4B5563}
 .project-meta b{font:700 9px/1.5 'IBM Plex Sans',sans-serif;letter-spacing:.12em;color:#89909B}
 @media(max-width:600px){.project-meta span{grid-template-columns:76px minmax(0,1fr);gap:8px;font-size:.8rem}}
+
+
+/* BRAND & PRINT DESIGN — A FIRST-CLASS PORTFOLIO PILLAR */
+#work .design-pillar-intro{margin-top:clamp(88px,11vw,145px);padding-top:24px;border-top:1px solid #C9CDD5}
+#work .design-eyebrow{display:block;margin-bottom:18px;color:#2457E6;font:700 .7rem/1.4 'IBM Plex Sans',sans-serif;letter-spacing:.16em;text-transform:uppercase}
+#work .design-pillar-intro .sub-heading,#work .logo-pillar-intro .sub-heading{margin-top:0!important}
+#work .design-pillar-lead{max-width:68ch;margin:20px 0 0;font-size:clamp(1.05rem,1.5vw,1.3rem);line-height:1.7;color:#4B5563}
+#work .design-capabilities{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin:42px 0 34px;border-top:1px solid #D9DDE5;border-bottom:1px solid #D9DDE5;background:#fff}
+#work .design-capabilities>div{min-width:0;padding:24px 22px 26px;border-right:1px solid #D9DDE5}
+#work .design-capabilities>div:last-child{border-right:0}
+#work .design-capabilities>div>span{display:block;margin-bottom:22px;color:#8B5CF6;font:700 .72rem/1 'IBM Plex Sans',sans-serif;letter-spacing:.12em}
+#work .design-capabilities h3{margin:0 0 10px;font-size:clamp(1.05rem,1.6vw,1.35rem);letter-spacing:-.035em}
+#work .design-capabilities p{margin:0;font-size:.86rem;line-height:1.6;color:#6B7280}
+#work .disclaimer{margin:28px 0 0;padding:16px 18px;border-left:3px solid #8B5CF6;background:#F0EEFF;color:#525866;font-size:.83rem;line-height:1.65}
+#work .design-grid{gap:26px;margin-top:24px}
+#work .design-grid .design-item{display:flex;flex-direction:column;gap:18px;padding:clamp(16px,2.2vw,28px)!important;background:#fff!important;border:1px solid #DDE1E7!important;box-shadow:0 18px 42px rgba(21,25,35,.06);transition:transform .3s ease,box-shadow .3s ease}
+#work .design-grid .design-item:hover{transform:translateY(-5px);box-shadow:0 24px 52px rgba(21,25,35,.1)}
+#work .design-label{display:grid;grid-template-columns:42px minmax(0,1fr);column-gap:12px;align-items:start}
+#work .design-label>span{grid-row:span 2;color:#8B5CF6;font:700 .75rem/1.5 'IBM Plex Sans',sans-serif;letter-spacing:.12em}
+#work .design-label h3{margin:0;font-size:clamp(1.5rem,2.4vw,2.2rem);letter-spacing:-.055em}
+#work .design-label p{grid-column:2;margin:5px 0 0;color:#6B7280;font-size:.82rem}
+#work .design-grid .design-item img{display:block;width:100%;height:auto;max-height:580px;object-fit:contain;padding:clamp(10px,1.5vw,20px)!important;background:#F0EEFF!important;cursor:zoom-in}
+#work .logo-pillar-intro{margin-top:clamp(88px,11vw,145px);padding-top:24px;border-top:1px solid #C9CDD5}
+#work .logo-pillar-intro .design-pillar-lead{margin-bottom:34px}
+#work .logo-grid{margin-top:24px}
+#work .logo-grid .analytics-card>img{min-height:230px}
+@media(max-width:760px){
+ #work .design-capabilities{grid-template-columns:1fr}
+ #work .design-capabilities>div{padding:20px 18px;border-right:0;border-bottom:1px solid #D9DDE5}
+ #work .design-capabilities>div:last-child{border-bottom:0}
+ #work .design-capabilities>div>span{margin-bottom:12px}
+ #work .design-grid{grid-template-columns:1fr}
+ #work .design-label h3{font-size:1.6rem}
+}
