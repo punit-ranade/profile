@@ -1091,3 +1091,82 @@ body::before{
 @media(prefers-reduced-motion:reduce){
  .project-image img,.design-item>img,.logo-grid .analytics-card,.logo-grid .analytics-card>img{transition:none!important}
 }
+
+
+/* ===== HEADER REFINEMENT — OCT 2026 ===== */
+.navbar{
+  position:sticky;top:0;z-index:100;
+  display:grid;grid-template-columns:minmax(175px, .8fr) auto minmax(175px,.8fr);
+  align-items:center;gap:24px;
+  width:min(92vw,1420px);min-height:76px;padding:12px 0;
+  background:rgba(245,243,238,.94);
+  border-bottom:1px solid var(--studio-line);
+  backdrop-filter:blur(16px);
+}
+.navbar .logo{
+  display:inline-flex;align-items:center;justify-self:start;gap:12px;
+  min-width:0;color:var(--studio-ink);text-decoration:none;
+}
+.navbar .logo img{
+  display:block;flex:0 0 40px;width:40px;height:40px;object-fit:contain;
+  padding:4px;background:#fff;border:1px solid var(--studio-line);
+  border-radius:7px;box-shadow:3px 3px 0 var(--studio-mint);
+}
+.navbar .logo::after{content:none!important;display:none!important}
+.navbar .brand-name{
+  display:block;color:var(--studio-ink);
+  font:700 14px/1.2 'IBM Plex Sans',sans-serif;
+  letter-spacing:-.025em;white-space:nowrap;
+}
+.navbar nav{justify-self:center;min-width:0}
+.navbar ul{
+  display:flex;align-items:center;justify-content:center;
+  gap:clamp(16px,2.1vw,30px);margin:0;padding:0;list-style:none;
+}
+.navbar nav a{
+  display:inline-flex;align-items:center;gap:5px;padding:10px 0;
+  color:#515761;font:600 11px/1.2 'IBM Plex Sans',sans-serif;
+  letter-spacing:.055em;text-transform:uppercase;text-decoration:none;
+  white-space:nowrap;
+}
+.navbar nav a::after{bottom:2px;height:2px;background:var(--studio-blue)}
+.navbar nav a:hover,.navbar nav a.active{color:var(--studio-blue)}
+.navbar nav a span,.navbar .social-links a span{font-size:12px}
+.navbar .social-links{
+  display:flex;align-items:center;justify-self:end;gap:8px;
+}
+.navbar .social-links a{
+  display:inline-flex;align-items:center;gap:5px;padding:9px 10px;
+  border:1px solid var(--studio-line);border-radius:3px;
+  color:#515761;background:rgba(255,255,255,.42);
+  font:600 10px/1.2 'IBM Plex Sans',sans-serif;
+  letter-spacing:.035em;text-transform:uppercase;text-decoration:none;
+  white-space:nowrap;
+}
+.navbar .social-links a:hover{color:var(--studio-blue);border-color:var(--studio-blue);transform:translateY(-1px)}
+@media(max-width:1050px){
+  .navbar{grid-template-columns:minmax(150px,.7fr) auto;gap:10px 18px;min-height:0;padding:12px 0}
+  .navbar nav{grid-column:1/-1;grid-row:2;justify-self:center}
+  .navbar .social-links{grid-column:2;grid-row:1}
+  .navbar ul{gap:clamp(18px,4vw,32px)}
+}
+@media(max-width:600px){
+  .navbar{width:92vw;grid-template-columns:minmax(0,1fr) auto;gap:12px 8px;padding:11px 0}
+  .navbar .logo{gap:9px}
+  .navbar .logo img{width:34px;height:34px;flex-basis:34px}
+  .navbar .brand-name{font-size:13px}
+  .navbar .social-links{gap:5px}
+  .navbar .social-links a{padding:8px 7px;font-size:9px;letter-spacing:0}
+  .navbar nav{width:100%;overflow-x:auto;scrollbar-width:none}
+  .navbar nav::-webkit-scrollbar{display:none}
+  .navbar ul{width:max-content;max-width:100%;margin-inline:auto;gap:clamp(16px,5vw,24px)}
+  .navbar nav a{padding:7px 0;font-size:10px;letter-spacing:.035em}
+}
+@media(max-width:360px){
+  .navbar .social-links a{padding:7px 5px;font-size:8px}
+  .navbar .brand-name{font-size:12px}
+  .navbar ul{gap:14px}
+}
+@media(prefers-reduced-motion:reduce){
+  .navbar .social-links a{transition:none}
+}
