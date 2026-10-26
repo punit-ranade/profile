@@ -80,3 +80,75 @@ button:hover { background: var(--button-dark); color: white; }
   header nav ul { gap: .8rem; }
   section:nth-of-type(3) .project { grid-template-columns: 1fr; }
 }
+
+
+/* Hero and selected work layout */
+.hero-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr);
+  align-items: center;
+  gap: clamp(2rem, 6vw, 6rem);
+  min-height: 72vh;
+  padding-top: clamp(3rem, 7vw, 6rem);
+  padding-bottom: clamp(3rem, 7vw, 6rem);
+}
+.hero-section > .hero-copy { max-width: 760px; margin: 0; }
+.hero-section > .hero-visual {
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  gap: 1rem; min-width: 0; margin: 0;
+}
+.hero-visual > div:first-child { width: min(100%, 440px); }
+.hero-visual img { display: block; width: 100%; max-height: 560px; object-fit: cover; object-position: center; }
+.hero-visual > div:nth-child(2) { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem 1.25rem; font-size: .8rem; letter-spacing: .08em; }
+.hero-visual > div:nth-child(n+3) { display: none; }
+.selected-work {
+  position: relative; isolation: isolate; overflow: hidden; max-width: none;
+  color: #F7F9F9;
+  background: linear-gradient(180deg, #2563EB 0%, #16A085 52%, #172B4D 100%);
+}
+.selected-work::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: .5;
+  background-image:
+    repeating-linear-gradient(133deg, transparent 0 72px, rgba(243,156,18,.45) 73px 74px, transparent 75px 145px),
+    repeating-linear-gradient(42deg, transparent 0 115px, rgba(243,156,18,.22) 116px 117px, transparent 118px 220px);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 18%, #000 90%, transparent 100%);
+}
+.selected-work > span, .selected-work > h2 { color: #F7F9F9; }
+.work-project {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+  align-items: center; gap: clamp(1.25rem, 4vw, 4rem);
+  padding: clamp(2.5rem, 6vw, 5rem) 0;
+  border-bottom: 1px solid rgba(247,249,249,.3);
+  position: relative;
+}
+.work-project-content { min-width: 0; }
+.work-project-content h3 { color: #F7F9F9; font-size: clamp(1.7rem, 3vw, 2.8rem); margin: 0 0 .4rem; }
+.work-project-content p, .work-project-content > span { color: #F7F9F9; }
+.work-project-content .work-project-url { color: #F39C12; font-weight: 700; margin: 0 0 .5rem; }
+.work-project-image { min-width: 0; }
+.work-project-image img { display: block; width: 100%; max-height: 420px; object-fit: cover; }
+.work-project-number { align-self: end; justify-self: end; color: #F39C12; font-size: clamp(1.3rem, 2.2vw, 2rem); font-weight: 700; white-space: nowrap; }
+.work-project-two { grid-template-columns: auto minmax(0, 1fr) minmax(0, 1fr); }
+.work-project-two .work-project-number { grid-column: 1; grid-row: 1; justify-self: start; align-self: end; }
+.work-project-two .work-project-image { grid-column: 2; grid-row: 1; }
+.work-project-two .work-project-content { grid-column: 3; grid-row: 1; }
+.work-project-one .work-project-content, .work-project-three .work-project-content { grid-column: 1; }
+.work-project-one .work-project-image, .work-project-three .work-project-image { grid-column: 2; }
+.work-tags { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1rem 0; }
+.work-tags span { border: 1px solid rgba(247,249,249,.45); border-radius: 5mm; padding: .2rem .65rem; color: #F7F9F9; font-size: .9rem; }
+.work-project-content a { color: #2C3E50; background: #F39C12; border-radius: 5mm; padding: .6rem 1rem; text-decoration: none; font-weight: 700; }
+.work-project-content a:hover { color: #F7F9F9; background: #2C3E50; }
+@media (max-width: 760px) {
+  .hero-section { grid-template-columns: 1fr; min-height: auto; }
+  .hero-section > .hero-visual { grid-row: 1; }
+  .hero-visual > div:first-child { max-width: 320px; }
+  .work-project, .work-project-two { grid-template-columns: 1fr; gap: 1.25rem; }
+  .work-project-one .work-project-content, .work-project-one .work-project-image,
+  .work-project-three .work-project-content, .work-project-three .work-project-image,
+  .work-project-two .work-project-number, .work-project-two .work-project-image,
+  .work-project-two .work-project-content { grid-column: 1; grid-row: auto; }
+  .work-project-number { justify-self: end; }
+  .work-project-two .work-project-number { order: 0; justify-self: start; }
+  .work-project-two .work-project-image { order: 1; }
+  .work-project-two .work-project-content { order: 2; }
+}
