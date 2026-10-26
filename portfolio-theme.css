@@ -152,3 +152,78 @@ button:hover { background: var(--button-dark); color: white; }
   .work-project-two .work-project-image { order: 1; }
   .work-project-two .work-project-content { order: 2; }
 }
+
+
+/* Keep the gradient exclusively on Selected Work; tile the proof galleries */
+body { background: var(--background); }
+#about, #proof, #contact { background: var(--background); color: var(--primary); }
+#about h2, #proof h2, #contact h2,
+#about h3, #proof h3, #contact h3 { color: var(--primary); }
+#proof, #contact { max-width: 1440px; }
+#work { margin: 0; }
+#work .pillar-three-intro,
+#work .tracking-gallery,
+#work > div.business-profile-gallery,
+#proof > div.certification-gallery { color: var(--primary); }
+#work .pillar-three-intro h2,
+#work .pillar-three-intro p,
+#work .pillar-three-intro > span,
+#work .tracking-gallery h3,
+#work .tracking-gallery p,
+#work > h2:not(:first-of-type) { color: var(--primary); }
+#work .pillar-three-gallery,
+#work .tracking-gallery,
+#work .business-profile-gallery,
+#proof .certification-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1rem;
+  align-items: stretch;
+  margin: 1.25rem 0 2.5rem;
+}
+#work .pillar-three-gallery > div,
+#work .tracking-gallery > div,
+#work .business-profile-gallery > div,
+#proof .certification-gallery > div {
+  min-width: 0;
+  margin: 0;
+  padding: 1rem;
+  background: #FFFFFF;
+  color: var(--primary);
+  border: 1px solid var(--border);
+  border-radius: 5mm;
+  overflow: hidden;
+}
+#work .pillar-three-gallery img,
+#work .tracking-gallery img,
+#work .business-profile-gallery img,
+#proof .certification-gallery img {
+  display: block;
+  width: 100%;
+  height: 190px;
+  object-fit: contain;
+  margin: 0 0 .75rem;
+  border-radius: 5mm;
+}
+#work .pillar-three-gallery h3,
+#work .tracking-gallery h3,
+#work .business-profile-gallery h3,
+#proof .certification-gallery h3 { color: var(--primary); margin: .4rem 0; }
+#work .pillar-three-gallery p,
+#work .tracking-gallery p,
+#work .business-profile-gallery p,
+#proof .certification-gallery p { color: var(--primary); }
+#work .business-profile-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+#proof .certification-gallery { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+#work .pillar-three-gallery { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+#work .tracking-gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 900px) {
+  #work .pillar-three-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #proof .certification-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  #work .pillar-three-gallery,
+  #work .tracking-gallery,
+  #work .business-profile-gallery,
+  #proof .certification-gallery { grid-template-columns: 1fr; }
+}
